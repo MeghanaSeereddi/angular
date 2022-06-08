@@ -1,0 +1,24 @@
+<nav>
+  <ul>
+    <li>
+      <a routerLink="/about" >About</a>
+
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
+
+<div>
+  <h3>User form</h3>
+  <input [(ngModel)]="user.name">
+  <input [(ngModel)]="user.age">
+  <input type="radio" name="gender" value="Male" [(ngModel)]="user.gender">Male
+  <input type="radio" name="gender" value="Female" [(ngModel)]="user.gender">Female
+  <button (click)="save()">Save</button>
+
+  <ol>
+    <li *ngFor = 'let user of users; let i= index'>{{user.name }}, {{user.age}}
+      <button (click)="deleteUser(user, i)">Delete</button>
+    </li>
+  </ol>
+</div>
