@@ -19,7 +19,7 @@ export class AppComponent {
   deleteUser(user:any, index:number){
     const observable = this.userservice.deleteUser(user);
     observable.subscribe(response =>{
-      alert('delete succssfully');
+      alert('deleted successfully');
       this.users.splice(index,1);
     })
   }
